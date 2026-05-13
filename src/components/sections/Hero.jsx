@@ -20,7 +20,7 @@ export default function Hero() {
           src={heroImg}
           alt="A cat relaxing at Momopet grooming spa"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: 'left 15%' }}
+          style={{ objectPosition: '15% 15%' }}
           loading="eager"
           fetchPriority="high"
         />
@@ -47,8 +47,7 @@ export default function Hero() {
       {/* ── Text content ───────────────────────────────── */}
       <div className="relative w-full max-w-6xl mx-auto px-6 sm:px-12 py-16 md:py-28">
         <motion.div
-          className="max-w-sm md:mx-0 text-left"
-          style={{ marginLeft: 'clamp(1rem, 30%, 8rem)' }}
+          className="max-w-sm mx-auto md:mx-0 text-center md:text-left"
           variants={fadeUp}
           initial="hidden"
           animate="show"
