@@ -60,7 +60,7 @@ export default function Hero() {
             <br />Grooming for
             <br />Your Beloved Feline
           </h1>
-          <div className="flex flex-row gap-2 flex-nowrap justify-start">
+          <div className="flex flex-row gap-2 flex-nowrap justify-center md:justify-start">
             <Link
               to="/services"
               className="inline-flex justify-center items-center px-4 py-2 rounded-full text-xs font-bold text-white shadow-md transition-all duration-200 hover:brightness-110 active:scale-95 sm:px-6 sm:py-2.5 sm:text-sm"
