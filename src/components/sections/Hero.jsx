@@ -45,33 +45,33 @@ export default function Hero() {
       />
 
       {/* ── Text content ───────────────────────────────── */}
-      {/* Mobile: centered at bottom, Desktop: left-aligned middle */}
       <div className="relative w-full max-w-6xl mx-auto px-6 sm:px-12 py-16 md:py-28">
         <motion.div
-          className="max-w-sm mx-auto md:mx-0 text-center md:text-left"
+          className="max-w-sm md:mx-0 text-left"
+          style={{ marginLeft: 'clamp(1rem, 15%, 5rem)' }}
           variants={fadeUp}
           initial="hidden"
           animate="show"
         >
           <h1
-            className="text-xl sm:text-4xl font-extrabold leading-snug mb-4"
+            className="text-xl sm:text-4xl font-extrabold leading-snug mb-3"
             style={{ color: '#3D2314', fontFamily: 'Nunito, sans-serif' }}
           >
             <span style={{ color: '#C4603A' }}>Momopet:</span> Premium
             <br />Grooming for
             <br />Your Beloved Feline
           </h1>
-          <div className="flex flex-row gap-3 flex-wrap justify-center md:justify-start">
+          <div className="flex flex-row gap-2 flex-nowrap justify-start">
             <Link
               to="/services"
-              className="inline-flex justify-center items-center px-6 py-2.5 rounded-full text-sm font-bold text-white shadow-md transition-all duration-200 hover:brightness-110 active:scale-95"
+              className="inline-flex justify-center items-center px-4 py-2 rounded-full text-xs font-bold text-white shadow-md transition-all duration-200 hover:brightness-110 active:scale-95 sm:px-6 sm:py-2.5 sm:text-sm"
               style={{ backgroundColor: '#C4603A', fontFamily: 'Nunito, sans-serif' }}
             >
               Explore Services
             </Link>
             <Link
               to="/services"
-              className="inline-flex justify-center items-center px-6 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200 hover:bg-[#F2E4D4] active:scale-95"
+              className="inline-flex justify-center items-center px-4 py-2 rounded-full text-xs font-bold border-2 transition-all duration-200 hover:bg-[#F2E4D4] active:scale-95 sm:px-6 sm:py-2.5 sm:text-sm"
               style={{ borderColor: '#C4603A', color: '#C4603A', fontFamily: 'Nunito, sans-serif' }}
             >
               Book Appointment
