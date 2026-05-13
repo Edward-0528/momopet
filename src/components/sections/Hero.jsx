@@ -20,7 +20,7 @@ export default function Hero() {
           src={heroImg}
           alt="A cat relaxing at Momopet grooming spa"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: 'right 15%' }}
+          style={{ objectPosition: 'left 15%' }}
           loading="eager"
           fetchPriority="high"
         />
@@ -54,7 +54,7 @@ export default function Hero() {
           animate="show"
         >
           <h1
-            className="text-3xl sm:text-4xl font-extrabold leading-snug mb-4"
+            className="text-xl sm:text-4xl font-extrabold leading-snug mb-4"
             style={{ color: '#3D2314', fontFamily: 'Nunito, sans-serif' }}
           >
             <span style={{ color: '#C4603A' }}>Momopet:</span> Premium
