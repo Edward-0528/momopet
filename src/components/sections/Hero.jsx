@@ -20,7 +20,7 @@ export default function Hero() {
           src={heroImg}
           alt="A cat relaxing at Momopet grooming spa"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: 'center 15%' }}
+          style={{ objectPosition: 'left 15%' }}
           loading="eager"
           fetchPriority="high"
         />
