@@ -66,7 +66,6 @@ export default function CartDrawer() {
               left: 0,
               right: 0,
               maxHeight: '88svh',
-              borderRadius: '24px 24px 0 0',
               backgroundColor: '#F5EDE0',
               boxShadow: '0 -8px 40px rgba(61,35,20,0.18)',
               fontFamily: 'Nunito, sans-serif',
@@ -76,10 +75,18 @@ export default function CartDrawer() {
             exit={{ y: '100%' }}
             transition={{ type: 'spring', stiffness: 320, damping: 34 }}
           >
-            {/* Handle bar */}
-            <div className="flex justify-center pt-3 pb-1" aria-hidden="true">
-              <div className="w-10 h-1 rounded-full" style={{ backgroundColor: '#D9C4A8' }} />
-            </div>
+            {/* ── Torn receipt top edge ── */}
+            <svg
+              viewBox="0 0 600 28"
+              preserveAspectRatio="none"
+              style={{ display: 'block', width: '100%', height: '28px', flexShrink: 0 }}
+              aria-hidden="true"
+            >
+              <path
+                d="M0,28 V13 L12,5 L22,12 L35,3 L47,10 L58,2 L70,9 L83,16 L94,6 L107,13 L118,3 L130,11 L143,17 L155,5 L166,13 L178,4 L190,12 L202,19 L214,8 L225,15 L237,5 L249,13 L261,3 L273,11 L285,17 L296,6 L308,14 L320,4 L332,12 L343,18 L355,7 L367,14 L379,4 L390,12 L402,17 L414,6 L426,14 L437,4 L449,12 L461,3 L473,11 L484,18 L496,8 L508,15 L520,5 L531,13 L543,3 L555,11 L567,17 L578,7 L590,14 L600,8 V28 Z"
+                fill="#F5EDE0"
+              />
+            </svg>
 
             {/* Header */}
             <div
