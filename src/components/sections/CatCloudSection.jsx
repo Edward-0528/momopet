@@ -1,14 +1,5 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import secondaryImg from '../../assets/secondaryhero.webp';
-
-/* Floating paw print path */
-const floatVariants = {
-  animate: {
-    y: [0, -10, 0],
-    transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-  },
-};
 
 export default function CatCloudSection() {
   return (
@@ -16,34 +7,33 @@ export default function CatCloudSection() {
       className="relative py-16 sm:py-24 overflow-hidden"
       style={{ backgroundColor: '#EAD9C5' }}
     >
-      {/* Decorative scattered paws */}
-      {['top-4 left-6', 'top-10 right-14', 'bottom-8 left-1/3'].map((pos, i) => (
-        <motion.span
+      {/* Decorative scattered paws — CSS animation, no JS reflow */}
+      {[
+        { pos: 'top-4 left-6',    delay: '0s',    dur: '3s'  },
+        { pos: 'top-10 right-14', delay: '0.8s',  dur: '4s'  },
+        { pos: 'bottom-8 left-1/3', delay: '1.6s', dur: '3.5s' },
+      ].map(({ pos, delay, dur }, i) => (
+        <span
           key={i}
           className={`absolute text-xl select-none pointer-events-none opacity-20 ${pos}`}
-          animate={{ y: [0, -8, 0], rotate: [0, 8, -8, 0] }}
-          transition={{ duration: 3 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }}
+          style={{ animation: `pawFloat ${dur} ease-in-out ${delay} infinite` }}
         >
           🐾
-        </motion.span>
+        </span>
       ))}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col-reverse md:flex-row items-center gap-10">
 
-          {/* ── Left: Floating illustration ─────────────── */}
-          <motion.div
-            className="flex-1 flex justify-center"
-            variants={floatVariants}
-            animate="animate"
-          >
+          {/* ── Left: Floating illustration — CSS float, no JS reflow ── */}
+          <div className="flex-1 flex justify-center" style={{ animation: 'catFloat 4s ease-in-out infinite' }}>
             <img
               src={secondaryImg}
               alt="Cat relaxing on a cloud illustration"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md object-contain drop-shadow-md"
               loading="lazy"
             />
-          </motion.div>
+          </div>
 
           {/* ── Right: Text ──────────────────────────────── */}
           <motion.div
