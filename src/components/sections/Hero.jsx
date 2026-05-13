@@ -10,7 +10,7 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-end md:items-center overflow-hidden pt-16"
+      className="relative min-h-screen flex items-start md:items-center overflow-hidden pt-16"
     >
       {/* ── Full-bleed background image ─────────────────── */}
       <img
@@ -21,12 +21,12 @@ export default function Hero() {
         loading="eager"
       />
 
-      {/* Mobile gradient: bottom-up so image shows at top, text readable at bottom */}
+      {/* Mobile gradient: top-down so text at top is readable, image shows below */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
           background:
-            'linear-gradient(to top, rgba(245,237,224,1) 0%, rgba(245,237,224,0.85) 35%, rgba(245,237,224,0.1) 65%, rgba(245,237,224,0) 100%)',
+            'linear-gradient(to bottom, rgba(245,237,224,1) 0%, rgba(245,237,224,0.85) 35%, rgba(245,237,224,0.1) 65%, rgba(245,237,224,0) 100%)',
         }}
       />
 
