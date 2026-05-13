@@ -80,13 +80,26 @@ export default function ConfirmationPage() {
 
           {/* ── Receipt Card ──────────────────────────────── */}
           <motion.div
-            className="rounded-3xl overflow-hidden mb-5 print-card"
-            style={{ backgroundColor: '#fff', boxShadow: '0 8px 32px rgba(61,35,20,0.12)' }}
+            className="mb-5 print-card"
+            style={{ filter: 'drop-shadow(0 8px 32px rgba(61,35,20,0.14))' }}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
           >
-            {/* Receipt header band */}
+            {/* ── Torn / ripped top edge ── */}
+            <svg
+              viewBox="0 0 600 28"
+              preserveAspectRatio="none"
+              style={{ display: 'block', width: '100%', height: '28px' }}
+              aria-hidden="true"
+            >
+              <path
+                d="M0,28 V13 L12,5 L22,12 L35,3 L47,10 L58,2 L70,9 L83,16 L94,6 L107,13 L118,3 L130,11 L143,17 L155,5 L166,13 L178,4 L190,12 L202,19 L214,8 L225,15 L237,5 L249,13 L261,3 L273,11 L285,17 L296,6 L308,14 L320,4 L332,12 L343,18 L355,7 L367,14 L379,4 L390,12 L402,17 L414,6 L426,14 L437,4 L449,12 L461,3 L473,11 L484,18 L496,8 L508,15 L520,5 L531,13 L543,3 L555,11 L567,17 L578,7 L590,14 L600,8 V28 Z"
+                fill="white"
+              />
+            </svg>
+
+            {/* Receipt header band — no rounded top (torn edge handles it) */}
             <div
               className="px-6 py-4"
               style={{ backgroundColor: '#C4603A' }}
@@ -100,7 +113,7 @@ export default function ConfirmationPage() {
             </div>
 
             {/* Receipt body */}
-            <div className="px-6 py-5">
+            <div className="px-6 py-5 rounded-b-3xl" style={{ backgroundColor: '#fff' }}>
 
               {/* Date, time, cat */}
               <div className="flex flex-col gap-2 mb-4">
