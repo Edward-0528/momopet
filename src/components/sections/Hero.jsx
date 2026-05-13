@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroImg from '../../assets/mainhero.webp';
+import heroImgMobile from '../../assets/mainhero-mobile.webp';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -12,14 +13,18 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-start md:items-center overflow-hidden pt-16"
     >
-      {/* ── Full-bleed background image ─────────────────── */}
-      <img
-        src={heroImg}
-        alt="A cat relaxing at Momopet grooming spa"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: 'center 15%' }}
-        loading="eager"
-      />
+      {/* ── Responsive background image ─────────────────── */}
+      <picture className="absolute inset-0 w-full h-full">
+        <source media="(max-width: 767px)" srcSet={heroImgMobile} />
+        <img
+          src={heroImg}
+          alt="A cat relaxing at Momopet grooming spa"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center 15%' }}
+          loading="eager"
+          fetchPriority="high"
+        />
+      </picture>
 
       {/* Mobile gradient: top-down so text at top is readable, image shows below */}
       <div
