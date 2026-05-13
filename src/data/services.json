@@ -8,7 +8,7 @@
     "duration": "1 hr 30 mins",
     "durationMins": 90,
     "category": "bath",
-    "image": "/src/assets/services/standardbath.webp",
+    "image": "/services/standardbath.webp",
     "description": "Delivers a complete grooming experience featuring a gentle brush-out, refreshing bath, nourishing conditioner, detailed ear cleaning, and precise nail trimming.",
     "descriptionZh": "洗护包含剪指甲，清理耳朵哦～不需要额外选择。",
     "featured": true
@@ -22,7 +22,7 @@
     "duration": "2 hrs",
     "durationMins": 120,
     "category": "bath",
-    "image": "/src/assets/services/deluxebath.webp",
+    "image": "/services/deluxebath.webp",
     "description": "A spa treatment that provides a relaxing bath, a soothing massage, and deep conditioning treatments with anti-static spray using the full line of ISB professional show-quality grooming products.",
     "descriptionZh": "洗护包含剪指甲，清理耳朵，剃脚毛哦～不需要额外选择。",
     "featured": true
@@ -36,7 +36,7 @@
     "duration": "1 hr",
     "durationMins": 60,
     "category": "styling",
-    "image": "/src/assets/services/lioncut.webp",
+    "image": "/services/lioncut.webp",
     "description": "During the grooming process, we will do our best to achieve a neat and aesthetically pleasing lion cut for your cat.",
     "descriptionZh": null,
     "featured": true
@@ -50,7 +50,7 @@
     "duration": "10 mins",
     "durationMins": 10,
     "category": "addon",
-    "image": "/src/assets/services/nailtrim.webp",
+    "image": "/services/nailtrim.webp",
     "description": "Precise and gentle nail trimming to keep your cat comfortable and your furniture scratch-free.",
     "descriptionZh": null,
     "featured": false
@@ -64,7 +64,7 @@
     "duration": "10 mins",
     "durationMins": 10,
     "category": "addon",
-    "image": "/src/assets/services/earclean.webp",
+    "image": "/services/earclean.webp",
     "description": "Gentle ear cleaning to remove wax buildup and keep your cat's ears healthy and clean.",
     "descriptionZh": null,
     "featured": false
@@ -78,7 +78,7 @@
     "duration": "15 mins",
     "durationMins": 15,
     "category": "addon",
-    "image": "/src/assets/services/brushteeth.webp",
+    "image": "/services/brushteeth.webp",
     "description": "Professional teeth brushing to support your cat's dental health and keep their breath fresh.",
     "descriptionZh": null,
     "featured": false
@@ -92,7 +92,7 @@
     "duration": "20 mins",
     "durationMins": 20,
     "category": "addon",
-    "image": "/src/assets/services/deshed.webp",
+    "image": "/services/deshed.webp",
     "description": "Gently removes loose fur and undercoat, reduces shedding, and keeps your cat's coat soft, smooth, and healthy.",
     "descriptionZh": null,
     "featured": false
@@ -106,7 +106,7 @@
     "duration": "30 mins",
     "durationMins": 30,
     "category": "addon",
-    "image": "/src/assets/services/demat.webp",
+    "image": "/services/demat.webp",
     "description": "Gently removes tangles and mats, keeping your cat's coat smooth, soft, and healthy.",
     "descriptionZh": null,
     "featured": false
@@ -120,7 +120,7 @@
     "duration": "20 mins",
     "durationMins": 20,
     "category": "addon",
-    "image": "/src/assets/services/pawsan.webp",
+    "image": "/services/pawsan.webp",
     "description": "Gently trims fur around the paws and sanitary areas to keep your cat clean, comfortable, and well-groomed.",
     "descriptionZh": null,
     "featured": false
@@ -134,7 +134,7 @@
     "duration": "25 mins",
     "durationMins": 25,
     "category": "addon",
-    "image": "/src/assets/services/standardbath.webp",
+    "image": "/services/standardbath.webp",
     "description": "A specialized treatment that removes excess oils and grease from your cat's coat, leaving it fresh, clean, and beautifully conditioned.",
     "descriptionZh": null,
     "featured": false
