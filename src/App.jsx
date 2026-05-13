@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import CartDrawer from './components/booking/CartDrawer';
 import CartFAB from './components/booking/CartFAB';
 import ScrollToTop from './components/ui/ScrollToTop';
-import catloadGif from './assets/catload.gif';
 
 const LandingPage      = lazy(() => import('./pages/LandingPage'));
 const ServicesPage     = lazy(() => import('./pages/ServicesPage'));
@@ -32,7 +31,7 @@ const PageLoader = () => (
       animate={{ rotate: [0, -15, 15, -10, 10, 0], scale: [1, 1.1, 1] }}
       transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 0.6 }}
     >
-      <img src={catloadGif} alt="" style={{ width: '2.5rem', height: '2.5rem', objectFit: 'contain' }} />
+      🐾
     </motion.span>
     <motion.p
       style={{ color: '#C4603A', fontSize: '1rem', fontWeight: 700 }}
