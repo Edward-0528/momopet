@@ -48,13 +48,13 @@ export default function Hero() {
       <div className="relative w-full max-w-6xl mx-auto px-6 sm:px-12 py-16 md:py-28">
         <motion.div
           className="max-w-sm md:mx-0 text-left"
-          style={{ marginLeft: 'clamp(1rem, 15%, 5rem)' }}
+          style={{ marginLeft: 'clamp(1rem, 30%, 8rem)' }}
           variants={fadeUp}
           initial="hidden"
           animate="show"
         >
           <h1
-            className="text-xl sm:text-4xl font-extrabold leading-snug mb-3"
+            className="text-3xl sm:text-4xl font-extrabold leading-snug mb-3"
             style={{ color: '#3D2314', fontFamily: 'Nunito, sans-serif' }}
           >
             <span style={{ color: '#C4603A' }}>Momopet:</span> Premium
