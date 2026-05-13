@@ -14,7 +14,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-start md:items-center overflow-hidden pt-16"
     >
       {/* ── Responsive background image ─────────────────── */}
-      <picture className="absolute inset-0 w-full h-full">
+      <picture>
         <source media="(max-width: 767px)" srcSet={heroImgMobile} />
         <img
           src={heroImg}

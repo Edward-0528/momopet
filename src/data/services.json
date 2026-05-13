@@ -8,8 +8,7 @@
     "duration": "1 hr 30 mins",
     "durationMins": 90,
     "category": "bath",
-    "image": "/services/standardbath.webp",
-    "description": "Delivers a complete grooming experience featuring a gentle brush-out, refreshing bath, nourishing conditioner, detailed ear cleaning, and precise nail trimming.",
+    "image": "/services/standardbath-v2.webp",
     "descriptionZh": "洗护包含剪指甲，清理耳朵哦～不需要额外选择。",
     "featured": true
   },
@@ -134,7 +133,7 @@
     "duration": "25 mins",
     "durationMins": 25,
     "category": "addon",
-    "image": "/services/standardbath.webp",
+    "image": "/services/standardbath-v2.webp",
     "description": "A specialized treatment that removes excess oils and grease from your cat's coat, leaving it fresh, clean, and beautifully conditioned.",
     "descriptionZh": null,
     "featured": false
