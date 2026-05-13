@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ============================================================
+   MoMoPet Design System — Global CSS Variables
+   ============================================================ */
+:root {
+  /* Brand Colors */
+  --color-cream:        #F5EDE0;
+  --color-coral:        #C4603A;
+  --color-coral-light:  #E07A56;
+  --color-coral-pale:   #F5DDD3;
+  --color-brown-dark:   #3D2314;
+  --color-brown-mid:    #7A4F35;
+  --color-sand:         #EAD9C5;
+  --color-sand-dark:    #D9C4A8;
+  --color-tag-bg:       #F2E4D4;
+  --color-green-soft:   #C8DDB4;
+  --color-red-soft:     #F5C6C0;
+  --color-white:        #FFFFFF;
+
+  /* Typography */
+  --font-primary: 'Nunito', system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 4px 16px rgba(61, 35, 20, 0.10);
+  --shadow-modal: 0 8px 40px rgba(61, 35, 20, 0.18);
+}
+
+/* ============================================================
+   Base Reset & Globals
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   Scrollbar Styling
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-sand); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-coral-light);
+  border-radius: 999px;
+}
+
+/* ============================================================
+   Accessibility — Focus Visible (coral ring, keyboard only)
+   ============================================================ */
+:focus-visible {
+  outline: 2.5px solid var(--color-coral);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Remove default outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Pill / rounded buttons get a pill-shaped focus ring */
+button:focus-visible,
+a:focus-visible {
+  outline: 2.5px solid var(--color-coral);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* ============================================================
+   Print Styles — Confirmation Receipt
+   ============================================================ */
+@media print {
+  nav, footer, .no-print { display: none !important; }
+  body { background: white; }
+}

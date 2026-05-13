@@ -1,0 +1,30 @@
+{
+  "name": "MoMoPet",
+  "phone": "+1 626-216-6878",
+  "email": "zwl030524@gmail.com",
+  "address": "17145 Von Karman Ave Ste 104, Irvine, CA 92614-0907",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.7!2d-117.8526!3d33.6694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s17145+Von+Karman+Ave+Ste+104%2C+Irvine%2C+CA+92614!5e0!3m2!1sen!2sus!4v1",
+  "mapsUrl": "https://maps.google.com/?q=17145+Von+Karman+Ave+Ste+104+Irvine+CA+92614",
+  "hours": [
+    { "day": "Monday",    "open": "10:00 AM", "close": "6:00 PM" },
+    { "day": "Tuesday",   "open": "10:00 AM", "close": "6:00 PM" },
+    { "day": "Wednesday", "open": "10:00 AM", "close": "6:00 PM" },
+    { "day": "Thursday",  "open": "10:00 AM", "close": "6:00 PM" },
+    { "day": "Friday",    "open": "10:00 AM", "close": "6:00 PM" },
+    { "day": "Saturday",  "open": "10:00 AM", "close": "5:00 PM" },
+    { "day": "Sunday",    "open": "Closed",   "close": null }
+  ],
+  "policies": {
+    "health_requirement": {
+      "title": "Health Requirements",
+      "body": "We kindly accept only healthy cats with calm, friendly temperaments for grooming appointments. Please make sure your cat is free from fleas, ticks, or any health issues before scheduling."
+    },
+    "late_fee": {
+      "title": "Late Fee Policies",
+      "items": [
+        "If you arrive more than 30 minutes late, a late fee of $25 will be charged.",
+        "No-shows will also be charged $50."
+      ]
+    }
+  }
+}
