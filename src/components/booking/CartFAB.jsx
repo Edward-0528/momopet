@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import useBookingStore from '../../store/useBookingStore';
 import AnimatedNumber from '../ui/AnimatedNumber';
 
@@ -7,13 +8,17 @@ export default function CartFAB() {
   const cartItems = useBookingStore((s) => s.cartItems);
   const toggleCart = useBookingStore((s) => s.toggleCart);
   const getSubtotal = useBookingStore((s) => s.getSubtotal);
+  const { pathname } = useLocation();
 
   const count = cartItems.length;
   const subtotal = getSubtotal();
 
+  // ServicesPage already has a sticky bar with a "Review Cart" button — hide FAB there
+  const hideOnServices = pathname === '/services';
+
   return (
     <AnimatePresence>
-      {count > 0 && (
+      {count > 0 && !hideOnServices && (
         <motion.button
           key="cart-fab"
           onClick={toggleCart}
