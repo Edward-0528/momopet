@@ -11,11 +11,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor':  ['react', 'react-dom', 'react-router-dom'],
-          'motion':        ['framer-motion'],
-          'forms':         ['react-hook-form', 'zod'],
-          'utils':         ['date-fns', 'lucide-react', 'zustand'],
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (id.includes('framer-motion'))                              return 'motion';
+          if (id.includes('react-hook-form') || id.includes('zod'))     return 'forms';
+          if (id.includes('date-fns') || id.includes('lucide-react') || id.includes('zustand')) return 'utils';
+          if (id.includes('react-dom') || id.includes('react-router') || id.includes('react/')) return 'react-vendor';
         },
       },
     },
