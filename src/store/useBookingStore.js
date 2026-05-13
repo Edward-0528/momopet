@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 /**
- * useBookingStore — Global Zustand store for MoMoPet
+ * useBookingStore — Global Zustand store for Momopet
  * Manages cart items, appointment selection, and cat info.
  */
 const useBookingStore = create((set, get) => ({

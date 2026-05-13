@@ -11,6 +11,7 @@ import CatInfoForm from '../components/booking/CatInfoForm';
 import useBookingStore from '../store/useBookingStore';
 import { formatCurrency, formatDuration } from '../utils/formatCurrency';
 import { formatReceiptDate } from '../utils/dateHelpers';
+import catloadGif from '../assets/catload.gif';
 
 const slideVariants = {
   enter:  { x: 40,  opacity: 0 },
@@ -31,6 +32,7 @@ export default function BookingPage() {
   const getTotalDurationMins = useBookingStore((s) => s.getTotalDurationMins);
 
   const [step, setStep] = useState('datetime');
+  const [showLoader, setShowLoader] = useState(false);
 
   // Redirect to services if cart is empty
   useEffect(() => {
@@ -44,7 +46,8 @@ export default function BookingPage() {
 
   const handleCatInfoSubmit = ({ catName: name }) => {
     setCatName(name);
-    navigate('/confirmation');
+    setShowLoader(true);
+    setTimeout(() => navigate('/confirmation'), 2200);
   };
 
   return (
@@ -236,6 +239,33 @@ export default function BookingPage() {
         </div>
       </main>
       <Footer />
+
+      {/* ── Cat loading screen ─────────────────────────── */}
+      <AnimatePresence>
+        {showLoader && (
+          <motion.div
+            key="catloader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-4"
+            style={{ backgroundColor: 'rgba(245, 237, 224, 0.92)', backdropFilter: 'blur(6px)' }}
+          >
+            <img
+              src={catloadGif}
+              alt="Loading…"
+              className="w-24 h-24 object-contain"
+            />
+            <p
+              className="text-base font-bold"
+              style={{ color: '#C4603A', fontFamily: 'Nunito, sans-serif' }}
+            >
+              Booking your appointment…
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

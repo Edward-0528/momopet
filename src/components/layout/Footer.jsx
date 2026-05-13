@@ -13,7 +13,7 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            <p className="text-2xl font-extrabold text-[#E07A56] mb-3">MoMoPet</p>
+            <p className="text-2xl font-extrabold text-[#E07A56] mb-3">Momopet</p>
             <p className="text-[#EAD9C5] text-sm leading-relaxed mb-4">
               Irvine's whimsical cat grooming spa — where every whisker matters. 🐱
             </p>
@@ -86,14 +86,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#7A4F35] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-[#7A4F35]">
-            © {new Date().getFullYear()} MoMoPet. All rights reserved.
+            © {new Date().getFullYear()} Momopet. All rights reserved.
           </p>
           <p className="text-xs text-[#7A4F35] flex items-center gap-1">
             Made with <Heart size={11} className="text-[#C4603A]" fill="#C4603A" /> in Irvine, CA
           </p>
           <div className="flex gap-4 text-xs text-[#7A4F35]">
             <Link to="/services" className="hover:text-[#E07A56] transition-colors">Services</Link>
-            <Link to="/book"     className="hover:text-[#E07A56] transition-colors">Book Now</Link>
+            <Link to="/services"     className="hover:text-[#E07A56] transition-colors">Book Now</Link>
           </div>
         </div>
       </div>

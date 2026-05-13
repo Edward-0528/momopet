@@ -7,7 +7,7 @@ import useBookingStore from '../../store/useBookingStore';
 const navLinks = [
   { label: 'Home',      to: '/' },
   { label: 'Services',  to: '/services' },
-  { label: 'Book Now',  to: '/book' },
+  { label: 'Book Now',  to: '/services' },
 ];
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-[#F5EDE0]/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          scrolled || menuOpen ? 'bg-[#F5EDE0]/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -36,7 +36,7 @@ export default function Navbar() {
             className="font-extrabold text-2xl tracking-tight"
             style={{ color: '#C4603A', fontFamily: 'Nunito, sans-serif' }}
           >
-            MoMoPet
+            Momopet
           </Link>
 
           {/* Desktop Nav */}
@@ -83,7 +83,7 @@ export default function Navbar() {
 
             {/* Sign Up — desktop */}
             <Link
-              to="/book"
+              to="/services"
               className="hidden md:inline-flex items-center px-5 py-2 rounded-full text-sm font-bold text-white transition-all duration-200 hover:brightness-110 active:scale-95"
               style={{ backgroundColor: '#C4603A', fontFamily: 'Nunito, sans-serif' }}
             >
@@ -141,7 +141,7 @@ export default function Navbar() {
                 </NavLink>
               ))}
               <Link
-                to="/book"
+                to="/services"
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 inline-flex justify-center items-center px-5 py-3 rounded-full text-base font-bold text-white"
                 style={{ backgroundColor: '#C4603A', fontFamily: 'Nunito, sans-serif' }}

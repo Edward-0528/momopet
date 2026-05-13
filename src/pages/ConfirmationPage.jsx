@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, Printer, CalendarCheck, MapPin } from 'lucide-react';
@@ -16,22 +16,35 @@ export default function ConfirmationPage() {
   const appointmentDate      = useBookingStore((s) => s.appointmentDate);
   const appointmentTime      = useBookingStore((s) => s.appointmentTime);
   const catName              = useBookingStore((s) => s.catName);
-  const getSubtotal          = useBookingStore((s) => s.getSubtotal);
-  const getTotalDurationMins = useBookingStore((s) => s.getTotalDurationMins);
   const clearCart            = useBookingStore((s) => s.clearCart);
 
-  // Guard: redirect if booking is incomplete
+  // Snapshot the booking details into local state, then immediately clear the
+  // cart so "Book Appointment" always starts fresh from /services.
+  const [receipt, setReceipt] = useState(null);
+
   useEffect(() => {
     if (!cartItems.length || !appointmentDate || !appointmentTime || !catName) {
       navigate('/services');
+      return;
     }
-  }, []);
+    const snapshotItems = [...cartItems];
+    setReceipt({
+      cartItems: snapshotItems,
+      appointmentDate,
+      appointmentTime,
+      catName,
+      subtotal: snapshotItems.reduce((sum, item) => sum + item.price, 0),
+      totalMins: snapshotItems.reduce((sum, item) => sum + (item.durationMins || 0), 0),
+    });
+    clearCart();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const subtotal  = getSubtotal();
-  const totalMins = getTotalDurationMins();
+  // Render nothing until the snapshot is ready
+  if (!receipt) return null;
+
+  const { subtotal, totalMins } = receipt;
 
   const handleBookAnother = () => {
-    clearCart();
     navigate('/services');
   };
 
@@ -61,7 +74,7 @@ export default function ConfirmationPage() {
               Booking Confirmed! 🎉
             </h1>
             <p className="text-sm" style={{ color: '#7A4F35' }}>
-              We can't wait to pamper <strong>{catName}</strong>. See you soon!
+              We can't wait to pamper <strong>{receipt.catName}</strong>. See you soon!
             </p>
           </motion.div>
 
@@ -79,7 +92,7 @@ export default function ConfirmationPage() {
               style={{ backgroundColor: '#C4603A' }}
             >
               <p className="text-xs font-bold text-white/70 tracking-widest uppercase">
-                MoMoPet
+                Momopet
               </p>
               <p className="text-lg font-extrabold text-white">
                 Confirmation Receipt
@@ -94,13 +107,13 @@ export default function ConfirmationPage() {
                 <div className="flex justify-between text-sm">
                   <span className="font-semibold" style={{ color: '#7A4F35' }}>Date</span>
                   <span className="font-extrabold" style={{ color: '#3D2314' }}>
-                    {appointmentDate && formatReceiptDate(appointmentDate)}
+                    {receipt.appointmentDate && formatReceiptDate(receipt.appointmentDate)}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="font-semibold" style={{ color: '#7A4F35' }}>Time</span>
                   <span className="font-extrabold" style={{ color: '#3D2314' }}>
-                    {appointmentTime}&nbsp;
+                    {receipt.appointmentTime}&nbsp;
                     <span className="text-xs font-semibold" style={{ color: '#7A4F35' }}>
                       ({formatDuration(totalMins)})
                     </span>
@@ -108,7 +121,7 @@ export default function ConfirmationPage() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="font-semibold" style={{ color: '#7A4F35' }}>Cat's Name</span>
-                  <span className="font-extrabold" style={{ color: '#3D2314' }}>{catName}</span>
+                  <span className="font-extrabold" style={{ color: '#3D2314' }}>{receipt.catName}</span>
                 </div>
               </div>
 
@@ -117,7 +130,7 @@ export default function ConfirmationPage() {
 
               {/* Line items */}
               <div className="flex flex-col gap-2 mb-4">
-                {cartItems.map((item) => (
+                {receipt.cartItems.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
                     <span className="font-semibold" style={{ color: '#7A4F35' }}>
                       • {item.title}
